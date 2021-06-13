@@ -26,6 +26,7 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
    *
    * You should authorize a transaction and return an appropriate response
    */
+
   authorize(
     request: RawAuthorizationRequest<APIKeyCredentials, CardDetails>,
   ): Promise<ParsedAuthorizationResponse> {
