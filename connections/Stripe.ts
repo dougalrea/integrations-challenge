@@ -18,8 +18,8 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   website: 'stripe.com',
 
   configuration: {
-    accountId: '...Find a unique ID for the accounnt annd put it here...',
-    apiKey: '...Paste your stripe API key here...',
+    accountId: 'acct_1J1pPKK6CA6lGmFj',
+    apiKey: 'pk_test_51J1pPKK6CA6lGmFjDwoYvaTFkwWy9j8bflIfdkcBMBkMdzG6VCQ3Zg000LDXahoJMNp4w7jSVg7HVlKX6gzrcJRQ00Q6toO3N8',
   },
 
   /**
@@ -29,7 +29,7 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   authorize(
     request: RawAuthorizationRequest<APIKeyCredentials, CardDetails>,
   ): Promise<ParsedAuthorizationResponse> {
-    throw new Error('Method Not Implemented');
+      throw new Error('Method Not Implemented');
   },
 
   /**
