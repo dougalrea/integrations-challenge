@@ -32,15 +32,16 @@ const StripeConnection: ProcessorConnection<APIKeyCredentials, CardDetails> = {
   authorize(
     request: RawAuthorizationRequest<APIKeyCredentials, CardDetails>,
   ): Promise<ParsedAuthorizationResponse> {
-    const paymentIntent = await stripe.paymentIntents.create({
-      amount: request.amount,
-      currency: request.currencyCode,
-      payment_method: request.paymentMethod,
-      processorConfig = request.processorConfig
-    });
-    HttpClient
-      .request(url: '')
-    return
+    const createPaymentIntent = async () => {
+      const paymentIntent = await stripe.paymentIntents.create({
+        amount: request.amount,
+        currency: request.currencyCode,
+        payment_method: { request.paymentMethod }
+      });
+      return paymentIntent
+    }
+    
+    return createPaymentIntent()
     // throw new Error('Method Not Implemented');
   },
 
